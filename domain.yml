@@ -1,0 +1,65 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - about_channel
+#  - ask_deep_learning
+#  - ask_AI
+#  - ask_machine_learning
+  - thanks
+  - ask_topic_info
+  - more_info
+  
+entities:
+  - tech_topic
+responses:
+  
+  utter_ask_topic_info:
+    - text: "Sure, let me provide you with information about {tech_topic}."
+
+  utter_info:
+    - text: "Here is a link to wikipedia for more info {link}"
+
+  utter_goodbye:
+    - text: "Goodbye If you have more questions, feel free to ask anytime."
+
+  utter_ask_deep_learning:
+    - text: "Deep learning is a subset of machine learning where artificial neural networks, inspired by the human brain's structure, learn from large amounts of data to make decisions or predictions. Is there anything specific you'd like to know about deep learning?"
+
+  utter_ask_AI:
+    - text: "Artificial intelligence (AI) refers to the simulation of human intelligence processes by machines, including learning, reasoning, and self-correction. Is there any particular aspect of AI you're interested in?"
+
+  utter_ask_machine_learning:
+    - text: "Machine learning is a subset of AI that focuses on the development of algorithms and statistical models that enable computers to perform tasks without explicit instructions, relying on patterns and inference instead. How can I assist you further with machine learning?"
+
+  utter_thanks:
+    - text: "You're welcome! If you have any more questions, feel free to ask."
+
+  utter_about_channel:
+    - text: "My youtube channel is 'dogs can code too' its about dogs that write code"
+  utter_greet:
+    - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+actions:
+  - action_technology_provided
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

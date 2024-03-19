@@ -1,0 +1,69 @@
+version: "3.1"
+
+stories:
+- story: ask_topic_info
+  steps:
+    - intent: ask_topic_info
+    - action: action_technology_provided # utter_ask_topic_info
+
+#- story: deep_learning
+#  steps:
+#    - intent: ask_deep_learning
+#    - action: utter_ask_deep_learning
+#
+- story: more_info
+  steps:
+    - intent: more_info
+    - action: utter_info
+
+- story: goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+#- story: ask_AI
+#  steps:
+#    - intent: ask_AI
+#    - action: utter_ask_AI
+
+- story: thanks
+  steps:
+    - intent: thanks
+    - action: utter_thanks
+
+- story: channel_info
+  steps:
+    - intent: about_channel
+    - action: utter_about_channel   
+
+#- story: machine_learning
+#  steps:
+#    - intent: ask_machine_learning
+#    - action: utter_ask_machine_learning
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
